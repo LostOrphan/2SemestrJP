@@ -13,6 +13,10 @@
 		}
   ?>
 	<a href="index.html">Strona poczatkowa</a><br>
-	<a href="wylogowanie.php">Wylogowanie</a><br>
+	<?php
+	if(isset($_SESSION['log'])==true){
+	echo'<a href="wylogowanieSpecial.php">Wylogowanie</a><br>';
+	}
+	?>
 </body>
 </html>

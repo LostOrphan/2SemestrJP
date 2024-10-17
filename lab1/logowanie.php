@@ -2,13 +2,19 @@
   session_start();
   $tekst = $_POST['haslo'];
 	$pass1 = 'php';
-	if (($tekst==$pass1)) 
+	$pass2 = 'html';
+	$pass3 = 'css';
+	if (($tekst==$pass1) ||($tekst==$pass2) || ($tekst==$pass3) ) 
 	{
 		$_SESSION['log'] = true;
-		header('location: tajne.php');
+		if(($tekst==$pass3)){
+			$_SESSION['logTajny']=true;
+		}
+		header('location: index.html');
   }
   else 
 	{
-		header('location: formularz.html');
+		//header('location: formularz.html');
+		header('location: index.html');
   }
 ?>
